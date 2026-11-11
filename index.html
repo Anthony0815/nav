@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>我的导航 · 常用网站一处直达</title>
-<meta name="description" content="微积分大模型、辽宁省创新创业大赛通知聚合，以及常用官方入口，收在一页。">
+<title>软件工程学院数据261 · 导航</title>
+<meta name="description" content="大连大学软件工程学院数据261班的常用网站导航：微积分大模型、竞赛通知聚合、班级网盘，以及校内与省级官方入口。">
 <meta name="author" content="王朝轩">
 <meta name="theme-color" content="#f2f5fb">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232b5cff'/%3E%3Cpath d='M22 44 L32 20 L42 44' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -88,8 +88,8 @@
   .brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.2px}
   .mark{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
     background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;
-    font-size:15px;font-weight:800;box-shadow:0 8px 20px -8px var(--accent)}
-  .brand-txt{font-size:15.5px}
+    font-size:16px;font-weight:800;box-shadow:0 8px 20px -8px var(--accent)}
+  .brand-txt{font-size:14.5px;white-space:nowrap}
   .brand-txt em{font-style:normal;color:var(--accent)}
   .nav-right{display:flex;align-items:center;gap:14px}
   .clock{font-size:12.5px;color:var(--ink-3);font-variant-numeric:tabular-nums;letter-spacing:.3px}
@@ -178,9 +178,9 @@
     background:linear-gradient(var(--accent),var(--accent-2));margin-right:10px;vertical-align:-2px}
   .section-head p{margin:0;font-size:12.5px;color:var(--ink-3)}
   .links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .links.duo{grid-template-columns:repeat(2,minmax(0,1fr))}
   @media (max-width:980px){
     .links{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .links .link:last-child{grid-column:1/-1}
   }
   .link{display:flex;align-items:center;gap:13px;padding:15px 16px;border-radius:15px;
     background:var(--surface-soft);border:1px solid var(--line-soft);transition:.24s;position:relative;overflow:hidden}
@@ -189,9 +189,6 @@
     background:linear-gradient(140deg,rgba(43,92,255,.14),rgba(122,63,242,.12));color:var(--accent);font-size:13px;font-weight:700}
   .link .lt{min-width:0}
   .link .lt b{display:block;font-size:13px;font-weight:650;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .home{font-style:normal;display:inline-block;margin-left:6px;padding:1px 6px;border-radius:5px;
-    font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--accent);
-    background:rgba(43,92,255,.12);vertical-align:1.5px}
   .link .lt span{display:block;font-size:11.5px;color:var(--ink-3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .link .arw{margin-left:auto;color:var(--ink-3);font-size:14px;transition:.24s}
   .link:hover .arw{color:var(--accent);transform:translate(2px,-2px)}
@@ -234,6 +231,7 @@
     .card{padding:22px 20px 18px}
     .grid{grid-template-columns:1fr;gap:16px}
     .links{grid-template-columns:1fr}
+    .links.duo{grid-template-columns:1fr}
     .lede{font-size:14.5px}
   }
   @media (prefers-reduced-motion:reduce){
@@ -248,8 +246,8 @@
 <header id="top">
   <div class="wrap nav-inner">
     <a class="brand" href="./" aria-label="返回首页">
-      <span class="mark">A</span>
-      <span class="brand-txt">Anthony<em>·</em>导航</span>
+      <span class="mark">数</span>
+      <span class="brand-txt">软件工程学院数据261<em>·</em>导航</span>
     </a>
     <div class="nav-right">
       <span class="clock" id="clock">--</span>
@@ -271,7 +269,7 @@
       <input id="q" type="search" autocomplete="off" placeholder="搜索站点或关键词，如「微积分」「通知」" aria-label="搜索站点">
       <kbd>/</kbd>
     </div>
-    <p class="meta-line" id="metaLine">3 个站点 · 3 个官方入口 · 持续更新</p>
+    <p class="meta-line" id="metaLine">3 个站点 · 8 个官方入口 · 持续更新</p>
   </section>
 
   <section class="grid" id="grid" aria-label="我的站点">
@@ -350,17 +348,51 @@
 
   <p class="empty" id="empty">没有找到匹配的站点，换个关键词试试。</p>
 
-  <section class="section" id="official" aria-label="常用官方入口">
+  <section class="section links-section" id="campus" aria-label="大连大学校内入口">
     <div class="section-head">
-      <h2>常用官方入口</h2>
-      <p>本校优先，其后为省级渠道</p>
+      <h2>大连大学 · 校内入口</h2>
+      <p>官网、教务、服务大厅与学院网站</p>
     </div>
-    <div class="links" id="links">
-      <a class="link" href="https://cxcy.dlu.edu.cn/kcsj/cxcyjs.htm" target="_blank" rel="noopener" data-key="大连大学 本校 创新创业 竞赛 官方">
-        <span class="lq">连</span>
-        <span class="lt"><b>大连大学 · 创新创业竞赛<i class="home">本校</i></b><span>cxcy.dlu.edu.cn</span></span>
+    <div class="links">
+      <a class="link" href="https://www.dlu.edu.cn/" target="_blank" rel="noopener" data-key="大连大学 学校官网 官网 本校 官方 首页">
+        <span class="lq">校</span>
+        <span class="lt"><b>大连大学 · 学校官网</b><span>www.dlu.edu.cn</span></span>
         <span class="arw">↗</span>
       </a>
+      <a class="link" href="https://jwc1.dlu.edu.cn/" target="_blank" rel="noopener" data-key="大连大学 教务处 教务 本科 教学 选课 成绩 本校">
+        <span class="lq">教</span>
+        <span class="lt"><b>大连大学 · 教务处</b><span>jwc1.dlu.edu.cn</span></span>
+        <span class="arw">↗</span>
+      </a>
+      <a class="link" href="https://hall.dlu.edu.cn/" target="_blank" rel="noopener" data-key="大连大学 师生服务中心 服务大厅 办事 办事大厅 一站式 本校">
+        <span class="lq">服</span>
+        <span class="lt"><b>大连大学 · 师生服务中心</b><span>hall.dlu.edu.cn</span></span>
+        <span class="arw">↗</span>
+      </a>
+      <a class="link" href="https://se.dlu.edu.cn/" target="_blank" rel="noopener" data-key="大连大学 软件工程学院 软件 学院 本院 本校">
+        <span class="lq">软</span>
+        <span class="lt"><b>大连大学 · 软件工程学院</b><span>se.dlu.edu.cn</span></span>
+        <span class="arw">↗</span>
+      </a>
+      <a class="link" href="https://cxcy.dlu.edu.cn/" target="_blank" rel="noopener" data-key="大连大学 创新创业学院 双创 学院 本校">
+        <span class="lq">创</span>
+        <span class="lt"><b>大连大学 · 创新创业学院</b><span>cxcy.dlu.edu.cn</span></span>
+        <span class="arw">↗</span>
+      </a>
+      <a class="link" href="https://cxcy.dlu.edu.cn/kcsj/cxcyjs.htm" target="_blank" rel="noopener" data-key="大连大学 创新创业 竞赛 通知 赛事 本院">
+        <span class="lq">赛</span>
+        <span class="lt"><b>大连大学 · 创新创业竞赛</b><span>cxcy.dlu.edu.cn/kcsj</span></span>
+        <span class="arw">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section links-section" id="official" aria-label="省级官方渠道">
+    <div class="section-head">
+      <h2>省级官方渠道</h2>
+      <p>省级通知与双创平台</p>
+    </div>
+    <div class="links duo">
       <a class="link" href="https://jyt.ln.gov.cn/jyt/gk/zxtz/index.shtml" target="_blank" rel="noopener" data-key="辽宁省教育厅 通知公告 官方">
         <span class="lq">辽</span>
         <span class="lt"><b>辽宁省教育厅 · 通知公告</b><span>jyt.ln.gov.cn</span></span>
@@ -425,7 +457,7 @@
   var empty = document.getElementById('empty');
   var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
   var links = Array.prototype.slice.call(document.querySelectorAll('.link'));
-  var official = document.getElementById('official');
+  var linkSections = Array.prototype.slice.call(document.querySelectorAll('.links-section'));
   var meta = document.getElementById('metaLine');
 
   function norm(s) { return (s || '').toLowerCase().replace(/\s+/g, ' '); }
@@ -443,11 +475,13 @@
       el.hidden = !hit;
       if (hit) shownLinks++;
     });
-    official.hidden = shownLinks === 0;
+    linkSections.forEach(function (sec) {
+      sec.hidden = sec.querySelectorAll('.link:not([hidden])').length === 0;
+    });
     empty.classList.toggle('show', shownCards === 0 && shownLinks === 0);
     meta.textContent = term
       ? '找到 ' + (shownCards + shownLinks) + ' 个结果'
-      : '3 个站点 · 3 个官方入口 · 持续更新';
+      : '3 个站点 · 8 个官方入口 · 持续更新';
   }
   q.addEventListener('input', filter);
   q.addEventListener('keydown', function (e) { if (e.key === 'Escape') { q.value = ''; filter(); q.blur(); } });
