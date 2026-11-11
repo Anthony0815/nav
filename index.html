@@ -271,7 +271,7 @@
       <input id="q" type="search" autocomplete="off" placeholder="搜索站点或关键词，如「微积分」「通知」" aria-label="搜索站点">
       <kbd>/</kbd>
     </div>
-    <p class="meta-line" id="metaLine">3 个站点 · 4 个官方入口 · 持续更新</p>
+    <p class="meta-line" id="metaLine">3 个站点 · 3 个官方入口 · 持续更新</p>
   </section>
 
   <section class="grid" id="grid" aria-label="我的站点">
@@ -447,7 +447,7 @@
     empty.classList.toggle('show', shownCards === 0 && shownLinks === 0);
     meta.textContent = term
       ? '找到 ' + (shownCards + shownLinks) + ' 个结果'
-      : '3 个站点 · 4 个官方入口 · 持续更新';
+      : '3 个站点 · 3 个官方入口 · 持续更新';
   }
   q.addEventListener('input', filter);
   q.addEventListener('keydown', function (e) { if (e.key === 'Escape') { q.value = ''; filter(); q.blur(); } });
