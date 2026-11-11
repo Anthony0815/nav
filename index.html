@@ -135,7 +135,7 @@
     animation:rise .7s cubic-bezier(.2,.7,.3,1) both;
   }
   .card:nth-child(2){animation-delay:.08s}
-  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @keyframes rise{from{transform:translateY(16px)}to{transform:none}}
   .card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
     background:radial-gradient(560px 200px at 12% -20%,rgba(43,92,255,.12),transparent 60%);
     opacity:0;transition:opacity .35s}
@@ -176,7 +176,7 @@
   .section-head h2::before{content:"";display:inline-block;width:4px;height:15px;border-radius:2px;
     background:linear-gradient(var(--accent),var(--accent-2));margin-right:10px;vertical-align:-2px}
   .section-head p{margin:0;font-size:12.5px;color:var(--ink-3)}
-  .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:12px}
+  .links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   .link{display:flex;align-items:center;gap:13px;padding:15px 16px;border-radius:15px;
     background:var(--surface-soft);border:1px solid var(--line-soft);transition:.24s;position:relative;overflow:hidden}
   .link:hover{background:var(--surface);border-color:rgba(43,92,255,.3);transform:translateY(-2px);box-shadow:var(--shadow-soft)}
@@ -191,7 +191,6 @@
   /* ---------- 空状态 / 页脚 ---------- */
   .empty{display:none;text-align:center;padding:56px 20px;color:var(--ink-3);font-size:14px}
   .empty.show{display:block}
-  body.filtering .section.empty-hide{display:none}
   footer{margin-top:56px;border-top:1px solid var(--line-soft);background:var(--surface-soft);backdrop-filter:blur(12px)}
   .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
     padding:26px 0;font-size:12.5px;color:var(--ink-3)}
@@ -209,6 +208,7 @@
     .hero{padding:18px 0 26px}
     .card{padding:22px 20px 18px}
     .grid{grid-template-columns:1fr;gap:16px}
+    .links{grid-template-columns:1fr}
     .lede{font-size:14.5px}
   }
   @media (prefers-reduced-motion:reduce){
@@ -257,7 +257,7 @@
         </div>
         <span class="pill">PocketBay</span>
       </div>
-      <h2>微积分大模型<small>Antho 的微积分考试系统</small></h2>
+      <h2>微积分大模型<small>微积分学习与考试系统</small></h2>
       <p class="desc">微积分智能问答、章节知识库、自动组卷与考试模拟，答题记录自动归档，错题会收进错题本，复习时按薄弱点重练。</p>
       <ul class="chips"><li>学习工具</li><li>AI 问答</li><li>考试模拟</li></ul>
       <div class="actions">
