@@ -200,6 +200,23 @@
   .sep{opacity:.5}
   .toTop{display:inline-flex;align-items:center;gap:6px}
 
+  /* ---------- 网盘横卡 ---------- */
+  .card.wide{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:26px;padding:24px 26px}
+  .card.wide .wmain{display:flex;align-items:flex-start;gap:18px;min-width:0;flex:1}
+  .card.wide .wtext{min-width:0}
+  .card.wide .desc{max-width:640px;margin-top:8px}
+  .card.wide .chips{margin-top:12px}
+  .card.wide .tip{margin-top:12px;padding-top:12px}
+  .card.wide .wact{display:flex;flex-direction:column;align-items:stretch;gap:10px;flex:none}
+  .icon.disk{background:linear-gradient(140deg,#06a7ff,#2b5cff)}
+  .icon.disk svg{width:26px;height:26px}
+  .desc b{color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+  .btn.ok{color:var(--mint);border-color:var(--mint)}
+
+  @media (max-width:820px){
+    .card.wide{flex-direction:column;align-items:stretch;gap:18px}
+    .card.wide .wact{flex-direction:row;flex-wrap:wrap}
+  }
   @media (max-width:640px){
     .wrap{padding:0 18px}
     .nav-inner{height:62px}
@@ -246,7 +263,7 @@
       <input id="q" type="search" autocomplete="off" placeholder="搜索站点或关键词，如「微积分」「通知」" aria-label="搜索站点">
       <kbd>/</kbd>
     </div>
-    <p class="meta-line" id="metaLine">2 个站点 · 4 个官方入口 · 持续更新</p>
+    <p class="meta-line" id="metaLine">3 个站点 · 4 个官方入口 · 持续更新</p>
   </section>
 
   <section class="grid" id="grid" aria-label="我的站点">
@@ -296,6 +313,30 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
         <span>主站由 GitHub Pages 提供，国内访问更稳；备用入口为 PocketBay 托管，主站打不开时再用。</span>
       </p>
+    </article>
+
+    <article class="card wide" data-key="班级 网盘 网盘链接 百度网盘 云盘 资源 资料 课件 作业 讲义 提取码 2610 pan.baidu">
+      <div class="wmain">
+        <div class="icon disk" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7.4 18.6h9.9a4.1 4.1 0 0 0 .7-8.14A5.6 5.6 0 0 0 7.05 9.5 4.55 4.55 0 0 0 7.4 18.6Z"/><path d="M12 13.2v5.2"/><path d="m9.6 15.6 2.4-2.4 2.4 2.4"/></svg>
+        </div>
+        <div class="wtext">
+          <h2>班级网盘<small>百度网盘 · 班级共享资料</small></h2>
+          <p class="desc">课件、作业、讲义等班级资料统一放在这里，打开后输入提取码 <b>2610</b> 即可查看或转存到自己的网盘。</p>
+          <ul class="chips"><li>资源分享</li><li>提取码 2610</li><li>班级资料</li></ul>
+          <p class="tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+            <span>分享链接由网盘提供，若提示已失效，需要分享者重新生成；登录网盘账号后可直接转存。</span>
+          </p>
+        </div>
+      </div>
+      <div class="wact">
+        <a class="btn btn-primary" href="https://pan.baidu.com/s/1wh6cK-A5sn6YuFQB04lzlw?pwd=2610" target="_blank" rel="noopener">
+          打开网盘
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+        <button class="btn btn-ghost" type="button" id="copyPwd" data-code="2610">复制提取码</button>
+      </div>
     </article>
   </section>
 
@@ -402,10 +443,38 @@
     empty.classList.toggle('show', shownCards === 0 && shownLinks === 0);
     meta.textContent = term
       ? '找到 ' + (shownCards + shownLinks) + ' 个结果'
-      : '2 个站点 · 4 个官方入口 · 持续更新';
+      : '3 个站点 · 4 个官方入口 · 持续更新';
   }
   q.addEventListener('input', filter);
   q.addEventListener('keydown', function (e) { if (e.key === 'Escape') { q.value = ''; filter(); q.blur(); } });
+
+  // 复制提取码
+  var copyBtn = document.getElementById('copyPwd');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var code = copyBtn.getAttribute('data-code') || '';
+      var label = copyBtn.textContent;
+      var done = function () {
+        copyBtn.textContent = '已复制 ' + code + ' ✓';
+        copyBtn.classList.add('ok');
+        setTimeout(function () { copyBtn.textContent = label; copyBtn.classList.remove('ok'); }, 1800);
+      };
+      var fallback = function () {
+        var ta = document.createElement('textarea');
+        ta.value = code;
+        ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        done();
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(done, fallback);
+      } else { fallback(); }
+    });
+  }
 
   document.addEventListener('keydown', function (e) {
     var tag = (document.activeElement && document.activeElement.tagName) || '';
