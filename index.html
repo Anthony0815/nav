@@ -215,6 +215,8 @@
   .card.wide .wact{display:flex;flex-direction:column;align-items:stretch;gap:10px;flex:none}
   .icon.disk{background:linear-gradient(140deg,#06a7ff,#2b5cff)}
   .icon.disk svg{width:26px;height:26px}
+  .icon.data{background:linear-gradient(140deg,#f59e0b,#f43f5e)}
+  .icon.data svg{width:25px;height:25px}
   .desc b{color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.06em}
   .btn.ok{color:var(--mint);border-color:var(--mint)}
 
@@ -263,13 +265,13 @@
   <section class="hero">
     <span class="eyebrow"><i class="dot"></i>Personal Hub · 个人导航</span>
     <h1>常用网站，<span class="grad">一处直达</span></h1>
-    <p class="lede">微积分学习、竞赛通知、官方入口——都收在这一页。点开即走，不用再翻收藏夹。</p>
+    <p class="lede">微积分、大数据导论、竞赛通知、官方入口——都收在这一页。点开即走，不用再翻收藏夹。</p>
     <div class="search">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
       <input id="q" type="search" autocomplete="off" placeholder="搜索站点或关键词，如「微积分」「通知」" aria-label="搜索站点">
       <kbd>/</kbd>
     </div>
-    <p class="meta-line" id="metaLine">3 个站点 · 8 个官方入口 · 持续更新</p>
+    <p class="meta-line" id="metaLine">4 个站点 · 8 个官方入口 · 持续更新</p>
   </section>
 
   <section class="grid" id="grid" aria-label="我的站点">
@@ -296,6 +298,28 @@
         <button class="btn btn-ghost" type="button" id="copyPwd" data-code="2610">复制提取码</button>
       </div>
     </article>
+    <article class="card" data-key="大数据 导论 组卷 系统 题库 考试 判分 章节 databig paper pocketbay">
+      <div class="card-top">
+        <div class="icon data" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M7 20v-6"/><path d="M12 20V8"/><path d="M17 20v-9"/></svg>
+        </div>
+        <span class="pill">PocketBay</span>
+      </div>
+      <h2>大数据导论<small>智能组卷系统</small></h2>
+      <p class="desc">209 道客观题、16 道简答题，可按章节、题型、难度自动组卷，在线答题后自动判分。</p>
+      <ul class="chips"><li>题库组卷</li><li>自动判分</li><li>章节练习</li></ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://databig-paper.pocketbay.app" target="_blank" rel="noopener">
+          打开网站
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+      <p class="tip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        <span>PocketBay 站点会休眠，首次打开若显示 Waking up，属于正常唤醒，等 30–60 秒即可。</span>
+      </p>
+    </article>
+
     <article class="card" data-key="微积分 大模型 数学 考试 题库 ai 学习 pocketbay calculus">
       <div class="card-top">
         <div class="icon calc" aria-hidden="true">
@@ -480,7 +504,7 @@
     empty.classList.toggle('show', shownCards === 0 && shownLinks === 0);
     meta.textContent = term
       ? '找到 ' + (shownCards + shownLinks) + ' 个结果'
-      : '3 个站点 · 8 个官方入口 · 持续更新';
+      : '4 个站点 · 8 个官方入口 · 持续更新';
   }
   q.addEventListener('input', filter);
   q.addEventListener('keydown', function (e) { if (e.key === 'Escape') { q.value = ''; filter(); q.blur(); } });
