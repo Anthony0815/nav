@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>软件工程学院数据261 · 导航</title>
-<meta name="description" content="大连大学软件工程学院数据261班的常用网站导航：微积分大模型、竞赛通知聚合、班级网盘，以及校内与省级官方入口。">
+<meta name="description" content="大连大学软件工程学院数据261班的常用网站导航：微积分、大数据导论、中国近代史复习、竞赛通知与班级网盘。">
 <meta name="author" content="王朝轩">
 <meta name="theme-color" content="#f2f5fb">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232b5cff'/%3E%3Cpath d='M22 44 L32 20 L42 44' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -128,7 +128,7 @@
   .meta-line{margin-top:14px;font-size:12.5px;color:var(--ink-3);letter-spacing:.2px}
 
   /* ---------- 卡片 ---------- */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(318px,1fr));gap:18px;padding:8px 0 10px}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:8px 0 10px}
   .card{
     position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
     padding:26px 26px 22px;box-shadow:var(--shadow);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
@@ -217,6 +217,8 @@
   .icon.disk svg{width:26px;height:26px}
   .icon.data{background:linear-gradient(140deg,#f59e0b,#f43f5e)}
   .icon.data svg{width:25px;height:25px}
+  .icon.hist{background:linear-gradient(140deg,#ef4444,#9f1239)}
+  .icon.hist svg{width:25px;height:25px}
   .desc b{color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.06em}
   .btn.ok{color:var(--mint);border-color:var(--mint)}
 
@@ -265,13 +267,13 @@
   <section class="hero">
     <span class="eyebrow"><i class="dot"></i>Personal Hub · 个人导航</span>
     <h1>常用网站，<span class="grad">一处直达</span></h1>
-    <p class="lede">微积分、大数据导论、竞赛通知、官方入口——都收在这一页。点开即走，不用再翻收藏夹。</p>
+    <p class="lede">微积分、大数据、近代史刷题、竞赛通知与官方入口——都收在这一页。点开即走，不用再翻收藏夹。</p>
     <div class="search">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
       <input id="q" type="search" autocomplete="off" placeholder="搜索站点或关键词，如「微积分」「通知」" aria-label="搜索站点">
       <kbd>/</kbd>
     </div>
-    <p class="meta-line" id="metaLine">4 个站点 · 8 个官方入口 · 持续更新</p>
+    <p class="meta-line" id="metaLine">5 个站点 · 8 个官方入口 · 持续更新</p>
   </section>
 
   <section class="grid" id="grid" aria-label="我的站点">
@@ -332,6 +334,28 @@
       <ul class="chips"><li>学习工具</li><li>AI 问答</li><li>考试模拟</li></ul>
       <div class="actions">
         <a class="btn btn-primary" href="https://anthony.pocketbay.app" target="_blank" rel="noopener">
+          打开网站
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+      <p class="tip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        <span>PocketBay 站点会休眠，首次打开若显示 Waking up，属于正常唤醒，等 30–60 秒即可。</span>
+      </p>
+    </article>
+
+    <article class="card" data-key="历史 近代史 中国近代史纲要 复习 答题 题库 练习 模拟考试 错题 收藏 exam pocketbay">
+      <div class="card-top">
+        <div class="icon hist" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <span class="pill">PocketBay</span>
+      </div>
+      <h2>中国近代史纲要<small>历史复习答题系统</small></h2>
+      <p class="desc">《中国近代史纲要》题库，支持顺序练习、随机练习、模拟考试与错题重练，重点题可以收藏。</p>
+      <ul class="chips"><li>顺序练习</li><li>模拟考试</li><li>错题重练</li></ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://exam.pocketbay.app" target="_blank" rel="noopener">
           打开网站
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
         </a>
@@ -504,7 +528,7 @@
     empty.classList.toggle('show', shownCards === 0 && shownLinks === 0);
     meta.textContent = term
       ? '找到 ' + (shownCards + shownLinks) + ' 个结果'
-      : '4 个站点 · 8 个官方入口 · 持续更新';
+      : '5 个站点 · 8 个官方入口 · 持续更新';
   }
   q.addEventListener('input', filter);
   q.addEventListener('keydown', function (e) { if (e.key === 'Escape') { q.value = ''; filter(); q.blur(); } });
